@@ -1,5 +1,5 @@
 # !/bin/bash
-#echo 'export PERCONA_BUILD_PATH="$HOME/percona_build"' >> ~/.bashrc 
+#echo 'export PERCONA_BUILD_PATH="$HOME/percona_build"' >> ~/.bashrc
 
 
 source ./percona_build_env.sh
@@ -10,12 +10,12 @@ if [ ! -d "$BUILD_DIR" ]; then
   mkdir $BUILD_DIR
 else
   echo "${ROOT_PATH}/build has created"
-fi 
+fi
 
 
 cd ${BUILD_DIR}
 
-cmake ${ROOT_PATH}/percona-server/ -DDOWNLOAD_BOOST=1  -DWITH_BOOST=${ROOT_PATH}/ -DWITHOUT_TOKUDB=1  -DWITHOUT_ROCKSDB=1 -DENABLE_DOWNLOADS=1
+cmake ${ROOT_PATH}/percona-server/ -DDOWNLOAD_BOOST=1  -DWITH_BOOST=${ROOT_PATH}/ -DWITHOUT_TOKUDB=1  -DWITHOUT_ROCKSDB=1 -DENABLE_DOWNLOADS=1  -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_INSTALL_PREFIX="${BUILD_DIR}/../build-install"
 
 cd ${PWD_PATH}
 

@@ -1,8 +1,23 @@
 .vscode
 
 build/
+build-install/
 
 boost*
 
 percona_server_impl.conf
 percona_connect_impl.json
+
+GPATH
+GRTAGS
+GTAGS
+
+.clangd/
+
+compile_commands.json
+
+mess_config_example.json
+host_config_example.json
+
+!script/temlate/host_config_example.json
+!script/temlate/mess_config_example.json
