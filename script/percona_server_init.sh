@@ -32,6 +32,7 @@ sed -i "s|log-error=.*$|log-error=${OUTPUT_DIR}/percona_error.log|g" ${CONF_FILE
 sed -i "s|pid-file=.*$|pid-file=${OUTPUT_DIR}/data/percona.pid|g" ${CONF_FILE_PATH}
 sed -i "s|multi_master_mess_config=.*$|multi_master_mess_config=${ROOT_PATH}/mess_config_example.json|g" ${CONF_FILE_PATH}
 sed -i "s|multi_master_host_config=.*$|multi_master_host_config=${ROOT_PATH}/host_config_example.json|g" ${CONF_FILE_PATH}
+sed -i "s|multi_master_log_dir=.*$|multi_master_log_dir=${OUTPUT_DIR}|g" ${CONF_FILE_PATH}
 
 ${BUILD_DIR}/bin/mysqld --defaults-file=${CONF_FILE_PATH}  --initialize
 
