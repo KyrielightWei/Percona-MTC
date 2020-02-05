@@ -6,3 +6,9 @@ boost*
 
 percona_server_impl.conf
 percona_connect_impl.json
+
+**/idea/
+**/cmake-build-debug/
+**/build/
+*.clion.source.upload.marker
+*nohup.out

@@ -1,4 +1,3 @@
 [submodule "percona-server"]
 	path = percona-server
-	url = git@gitee.com:rrzhang/percona-server.git
-
+	url = git@gitee.com:mirrors/percona-server.git
