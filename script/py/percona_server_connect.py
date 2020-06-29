@@ -2,9 +2,9 @@
 @Author: wei
 @Date: 2020-06-24 20:06:22
 @LastEditors: Do not edit
-@LastEditTime: 2020-06-24 23:07:17
+@LastEditTime: 2020-06-28 08:49:17
 @Description: file content
-@FilePath: /Percona-Share-Storage/script/py/percona_server_connect.py
+@FilePath: /script/py/percona_server_connect.py
 '''
 import os
 import sys

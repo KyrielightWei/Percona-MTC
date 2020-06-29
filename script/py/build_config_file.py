@@ -2,9 +2,9 @@
 @Author: wei
 @Date: 2020-06-23 18:03:52
 @LastEditors: Do not edit
-@LastEditTime: 2020-06-24 20:17:38
+@LastEditTime: 2020-06-28 09:04:28
 @Description: file content
-@FilePath: /Percona-Share-Storage/script/py/build_config_file.py
+@FilePath: /script/py/build_config_file.py
 '''
 
 import os
@@ -31,6 +31,12 @@ if(os.path.exists(config_path) == False):
         'group_name':'',
         'local_ip':'',
         'remote_peer_nodes':''
+    }
+    cfg['oltp_env']={
+        'oltp_path':'',
+        'workload':'',
+        'load_data':'',
+        'output_file':''
     }
     with open(config_path,'w') as configfile:
         cfg.write(configfile)

@@ -2,9 +2,9 @@
 @Author: wei
 @Date: 2020-06-24 20:03:20
 @LastEditors: Do not edit
-@LastEditTime: 2020-06-24 21:08:55
+@LastEditTime: 2020-06-29 16:03:26
 @Description: file content
-@FilePath: /Percona-Share-Storage/script/py/percona_server_run.py
+@FilePath: /script/py/percona_server_run.py
 '''
 import os
 import sys
@@ -25,11 +25,17 @@ run_user = cfg.get("run_env","run_user")
 
 mysqld_safe_path =  build_path + "/scripts/mysqld_safe"
 
+res = []
+
 for i in range(0,node_count):
     out_dir_i = out_dir + "/percona_" + str(port+i)
     config_i = out_dir+"/percona_" + str(port+i) + ".conf"
     #a,b = subprocess.getstatusoutput(mysqld_safe_path + " --defaults-file=" + config_i + " --user=" + run_user + " &",shell=True)
-    res = subprocess.Popen(mysqld_safe_path + " --defaults-file=" + config_i + " --user=" + run_user + " &",shell=True)
+    r = subprocess.Popen(mysqld_safe_path + " --defaults-file=" + config_i + " --multi_master_log_plugin=OFF --skip-log-bin --user=" + run_user + " &",shell=True)
+    print(mysqld_safe_path + " --defaults-file=" + config_i + " --multi_master_log_plugin=OFF --user=" + run_user + " &")
+    res.append(r)
     #print("result["+str(i)+"] = " + str(a))
     #if(a != 0):
-    print(res.communicate())
+
+for j in range(0,node_count):
+    print(res[j].communicate())
