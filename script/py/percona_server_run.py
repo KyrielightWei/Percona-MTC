@@ -2,9 +2,9 @@
 @Author: wei
 @Date: 2020-06-24 20:03:20
 @LastEditors: Do not edit
-@LastEditTime: 2020-06-29 16:03:26
+@LastEditTime: 2020-06-30 07:41:54
 @Description: file content
-@FilePath: /script/py/percona_server_run.py
+@FilePath: /Percona-Share-Storage/script/py/percona_server_run.py
 '''
 import os
 import sys
@@ -23,7 +23,7 @@ port = int(cfg.get("build_env","port"))
 node_count = int(cfg.get("run_env","node_count"))
 run_user = cfg.get("run_env","run_user")
 
-mysqld_safe_path =  build_path + "/scripts/mysqld_safe"
+mysqld_safe_path =  build_path + "/bin/mysqld_safe"
 
 res = []
 
@@ -31,7 +31,7 @@ for i in range(0,node_count):
     out_dir_i = out_dir + "/percona_" + str(port+i)
     config_i = out_dir+"/percona_" + str(port+i) + ".conf"
     #a,b = subprocess.getstatusoutput(mysqld_safe_path + " --defaults-file=" + config_i + " --user=" + run_user + " &",shell=True)
-    r = subprocess.Popen(mysqld_safe_path + " --defaults-file=" + config_i + " --multi_master_log_plugin=OFF --skip-log-bin --user=" + run_user + " &",shell=True)
+    r = subprocess.Popen(mysqld_safe_path + " --defaults-file=" + config_i + " --multi_master_log_plugin=ON --skip-log-bin --user=" + run_user + " &",shell=True)
     print(mysqld_safe_path + " --defaults-file=" + config_i + " --multi_master_log_plugin=OFF --user=" + run_user + " &")
     res.append(r)
     #print("result["+str(i)+"] = " + str(a))
