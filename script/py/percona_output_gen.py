@@ -2,9 +2,9 @@
 @Author: wei
 @Date: 2020-06-23 19:04:40
 @LastEditors: Do not edit
-@LastEditTime: 2020-06-29 22:04:45
+@LastEditTime: 2020-07-02 18:51:04
 @Description: file content
-@FilePath: /Percona-Share-Storage/script/py/percona_output_gen.py
+@FilePath: /percona-server/home/weixiaoxian/gitLocal/Percona-Share-Storage/script/py/percona_output_gen.py
 '''
 
 import os
@@ -73,6 +73,7 @@ for i in range(0,node_count):
             "multi_master_log_plugin_group_name": group_name,
             "multi_master_log_plugin_local_node": local_ip + ":" + str(xcom_port+i),
             "multi_master_log_plugin_peer_nodes": peer_nodes_str,
+            "multi_master_log_plugin_phxpaxos_log_path" : out_dir_i,
             "innodb_buffer_pool_size":"69793218560",
             "symbolic-links":"0",
             "innodb_thread_concurrency":"0",
