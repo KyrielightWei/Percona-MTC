@@ -2,9 +2,9 @@
 @Author: wei
 @Date: 2020-06-24 20:03:20
 @LastEditors: Do not edit
-@LastEditTime: 2020-06-30 07:41:54
+@LastEditTime: 2020-07-24 08:57:15
 @Description: file content
-@FilePath: /Percona-Share-Storage/script/py/percona_server_run.py
+@FilePath: /mysql_out_50/home/weixiaoxian/gitLocal/Percona-Share-Storage/script/py/percona_server_run.py
 '''
 import os
 import sys
