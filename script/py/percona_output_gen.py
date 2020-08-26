@@ -93,9 +93,9 @@ for i in range(0,node_count):
         }
         with open(config_i,'w') as configfile:
             mysql_config_i.write(configfile)
-        a,b = subprocess.getstatusoutput(mysqld_path + " --defaults-file="+config_i + "  --initialize --multi_master_log_plugin=OFF")
-        print("result["+str(i)+"] = " + str(a))
-        print(b)
+    a,b = subprocess.getstatusoutput(mysqld_path + " --defaults-file="+config_i + "  --initialize --multi_master_log_plugin=OFF")
+    print("result["+str(i)+"] = " + str(a))
+    print(b)
 
 
 # multi_master_log_plugin_group_name = mmlp_group

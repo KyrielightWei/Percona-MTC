@@ -4,6 +4,9 @@ build/
 build-install/
 nohup.out
 
+.clangd/
+compile_commands.json
+
 boost*
 
 percona_server_impl.conf
